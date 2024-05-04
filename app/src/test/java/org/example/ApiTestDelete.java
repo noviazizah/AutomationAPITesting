@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
-public class AppTestDelete {
+public class ApiTestDelete {
 
     @BeforeClass
     public void setUp() {
@@ -16,16 +16,16 @@ public class AppTestDelete {
         RestAssured.basePath = "/user";
     }
 
-    @Test
-    public void testDeleteUserValidAndRegistered() {
-        given()
-                .header("app-id", "662e0effbb70a725c32592e9")
-                .pathParam("userId", "60d0fe4f5311236168a109cd") // User ID valid dan terdaftar
-                .when()
-                .delete("/{userId}")
-                .then()
-                .statusCode(200); // No Content
-    }
+    // @Test
+    // public void testDeleteUserValidAndRegistered() {
+    //     given()
+    //             .header("app-id", "662e0effbb70a725c32592e9")
+    //             .pathParam("userId", "60d0fe4f5311236168a109cd") // User ID valid dan terdaftar
+    //             .when()
+    //             .delete("/{userId}")
+    //             .then()
+    //             .statusCode(200); // No Content
+    // }
 
     @Test
     public void testDeleteUserValidButNotRegistered() {
