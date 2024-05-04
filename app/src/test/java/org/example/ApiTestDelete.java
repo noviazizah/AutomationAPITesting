@@ -16,16 +16,16 @@ public class ApiTestDelete {
         RestAssured.basePath = "/user";
     }
 
-    // @Test
-    // public void testDeleteUserValidAndRegistered() {
-    //     given()
-    //             .header("app-id", "662e0effbb70a725c32592e9")
-    //             .pathParam("userId", "60d0fe4f5311236168a109cd") // User ID valid dan terdaftar
-    //             .when()
-    //             .delete("/{userId}")
-    //             .then()
-    //             .statusCode(200); // No Content
-    // }
+    @Test
+    public void testDeleteUserValidAndRegistered() {
+         given()
+                 .header("app-id", "662e0effbb70a725c32592e9")
+                 .pathParam("userId", "60d0fe4f5311236168a109cd") // User ID valid dan terdaftar
+                 .when()
+                 .delete("/{userId}")
+                 .then()
+                 .statusCode(200); // OK
+    }
 
     @Test
     public void testDeleteUserValidButNotRegistered() {
